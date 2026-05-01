@@ -1,0 +1,614 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" width="device=deceive-width" scale="initial-scale=1.0"/>
+    <link rel="stylesheet" href="Reservation.css">
+  </head>
+  <body>
+    <div class="zoom-section" id="zoomSection">
+      <div class="zoom-exit" id="zoomExit">Click Me</div>
+      <div class="zoom-img" id="zoomImg"></div>
+      <div class="zoom-bg"></div>
+    </div>
+          
+    <div class="notif">
+      <div class="notif-bg"></div>
+      <div class="notif-container">
+        <div class="notif-context" id="notifUI">
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="nav">
+      <div class="nav-title">Hotel Suite</div>
+      <div class="nav-links">
+        <div class="links link1">Home</div>
+        <div class="links link2">Rooms</div>
+        <div class="links link3">Others</div>
+        <div class="links link4">About</div>
+      </div>
+    </div>
+    
+    <div class="head">
+      <div class="head-clip"></div>
+      <div class="head-context">
+        <h1>Experience something New,</h1>
+        <h1>Experience something Expensive</h1>
+      </div>
+      <div class="head-bg"></div>
+      <div class="head-snippets">
+        <div class="row-snippets">
+          
+          <div class="snippets active snippet1">
+            <div class="snippet-logo logo1"></div>
+            <h1>Location</h1>
+            <p>Description</p>
+            <p>Etc.</p>
+          </div>
+          
+          <div class="snippets snippet2">
+            <div class="snippet-logo logo1"></div>
+            <h1>Check-In</h1>
+            <p>Description</p>
+            <p>Etc.</p>
+          </div>
+        </div>
+        <div class="row-snippets">
+          
+          <div class="snippets snippet3">
+            <div class="snippet-logo logo1"></div>
+            <h1>Check-Out</h1>
+            <p>Description</p>
+            <p>Etc.</p>
+          </div>
+          
+          <div class="snippets snippet4">
+            <div class="snippet-logo logo1"></div>
+            <h1>Guests</h1>
+            <p>Description</p>
+            <p>Etc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="introduction">
+      <div class="introduction-container">
+          <div class="introduction-context">
+            <h1>Introduction</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel turpis molestie tellus fermentum luctus. Praesent cursus vestibulum posuere. Nulla augue dolor, sagittis sit amet tincidunt sit amet, luctus sed nisi. Ut diam leo, malesuada et nunc vel, ultricies posuere mi. Quisque risus magna, consequat id diam eget, ultricies sollicitudin massa. Pellentesque rhoncus massa ex, in interdum metus faucibus eu. Suspendisse pretium, erat eu blandit placerat, est turpis tincidunt dolor, at commodo magna tellus vitae nisl.
+            </p>
+          </div>
+          <div class="introduction-img"></div>
+      </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="templates">
+      <div class="template-clip"></div>
+      <div class="template-box-container">
+        <div class="template-box">
+          <div class="template-img"></div>
+          <div class="template-context">
+            <h1>Fitness Center</h1>
+            <p>Description</p>
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-img"></div>
+          <div class="template-context">
+            <h1>Swimming Pool</h1>
+            <p>Description</p>
+          </div>
+        </div>
+        <div class="template-box">
+          <div class="template-img"></div>
+          <div class="template-context">
+            <h1>Parking Lot</h1>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="rooms">
+      <div class="room-shadow"></div>
+      <div class="room-option">
+        <div class="room-option-box">
+          <div class="room-img room1"></div>
+          <div class="room-content">
+            <div class="room-context">
+              <div class="room-description">
+                <h1>Standard Room</h1>
+                <p>Description:</p>
+              </div>
+              <div class="room-features">
+                <h3>Features</h3>
+                <ul>
+                  <li>Feature 1</li>
+                  <li>Feature 2</li>
+                  <li>Feature 3</li>
+                </ul>
+              </div>
+            </div>
+            <div class="room-button" id="standardRoom">Check Now</div>
+          </div>
+        </div>
+        <div class="box-gap"></div>
+        <div class="room-option-box">
+          <div class="room-img room2"></div>
+          <div class="room-content">
+            <div class="room-context">
+              <div class="room-description">
+                <h1>Deluxe Room</h1>
+                <p>Description:</p>
+              </div>
+              <div class="room-features">
+                <h3>Features</h3>
+                <ul>
+                  <li>Feature 1</li>
+                  <li>Feature 2</li>
+                  <li>Feature 3</li>
+                </ul>
+              </div>
+            </div>
+            <div class="room-button" id="deluxeRoom">Check Now</div>
+          </div>
+        </div>
+        <div class="box-gap"></div>
+        <div class="room-option-box">
+          <div class="room-img room3"></div>
+          <div class="room-content">
+            <div class="room-context">
+              <div class="room-description">
+                <h1>Family Room</h1>
+                <p>Description:</p>
+              </div>
+              <div class="room-features">
+                <h3>Features</h3>
+                <ul>
+                  <li>Feature 1</li>
+                  <li>Feature 2</li>
+                  <li>Feature 3</li>
+                </ul>
+              </div>
+            </div>
+            <div class="room-button" id="familyRoom">Check Now</div>
+          </div>
+        </div>
+        <div class="box-gap"></div>
+        <div class="room-option-box">
+          <div class="room-img room4"></div>
+          <div class="room-content">
+            <div class="room-context">
+              <div class="room-description">
+                <h1>Executive Room</h1>
+                <p>Description:</p>
+              </div>
+              <div class="room-features">
+                <h3>Features</h3>
+                <ul>
+                  <li>Feature 1</li>
+                  <li>Feature 2</li>
+                  <li>Feature 3</li>
+                </ul>
+              </div>
+            </div>
+            <div class="room-button" id="executiveRoom">Check Now</div>
+          </div>
+        </div>
+      </div>  
+      
+      <div class="room-scope">
+        <div class="room-scope-box standardScope" id="standardScope">
+          <div class="room-scope-img img1 image"></div>
+          <div class="room-gap"></div>
+          <div class="room-check">
+            <div class="check-box check-in">
+              <input  class="check-input checkIn"
+  type="text" 
+  placeholder="Check-In:" 
+  onfocus="(this.type='date')" 
+  onblur="if(!this.value)this.type='text'">
+            </div>
+            <div class="check-box check-out">
+              <input  class="check-input checkOut"
+  type="text" 
+  placeholder="Check-Out:" 
+  onfocus="(this.type='date')" 
+  onblur="if(!this.value)this.type='text'">
+            </div>
+            <div class="check-box guest">
+              <input type="number" class="check-input perRoom" placeholder="Room: 0"/>
+            </div>
+          </div>
+          <div class="room-gap"></div>
+          <div class="book-summary">
+            <h3>Date:</h3>
+            <p class="checkInUI">Check-In:</p>
+            <p class="checkOutUI">Check-Out:</p>
+            <p class="dateUI">Schedule:</p>
+            <p class="nightUI">Night:</p>
+            <p class="perRoomUI">Room: </p>
+            
+          </div>
+          <!-- <div class="room-gap"></div> -->
+          <div class="room-book">
+            <p class="priceUI">Price: $</p>
+            <div class="book-button bookButton">Book Now</div>
+          </div>
+          
+          <!-- <div class="book-price"></div> -->
+        </div>
+        
+        <div class="room-scope-box deluxeScope" id="deluxeScope">
+          <div class="room-scope-img img2 image" id="roomScope"></div>
+          <div class="room-gap"></div>
+          <div class="room-check">
+            <div class="check-box check-in">
+              <input class="check-input checkIn"
+  type="text" 
+  placeholder="Check-In:" 
+  onfocus="(this.type='date')" 
+  onblur="if(!this.value)this.type='text'">
+            </div>
+            <div class="check-box check-out">
+              <input  class="check-input checkOut"
+  type="text" 
+  placeholder="Check-Out:" 
+  onfocus="(this.type='date')" 
+  onblur="if(!this.value)this.type='text'">
+            </div>
+            <div class="check-box guest">
+              <input type="number" class="check-input perRoom" placeholder="Room: 0"/>
+            </div>
+          </div>
+          <div class="room-gap"></div>
+          <div class="book-summary">
+            <h3>Date:</h3>
+            <p class="checkInUI">Check-In:</p>
+            <p class="checkOutUI">Check-Out:</p>
+            <p class="dateUI">Schedule:</p>
+            <p class="nightUI">Night:</p>
+            <p class="perRoomUI">Room: </p>
+          </div>
+          <div class="room-book">
+            <p class="priceUI">Price: $</p>
+            <div class="book-button bookButton">Book Now</div>
+          </div>
+        </div>
+        
+        <div class="room-scope-box familyScope" id="familyScope">
+          <div class="room-scope-img img3 image" id="roomScope"></div>
+          <div class="room-gap"></div>
+          <div class="room-check">
+            <div class="check-box check-in">
+              <input  class="check-input checkIn"
+  type="text" 
+  placeholder="Check-In:" 
+  onfocus="(this.type='date')" 
+  onblur="if(!this.value)this.type='text'">
+            </div>
+            <div class="check-box check-out">
+              <input  class="check-input checkOut"
+  type="text" 
+  placeholder="Check-Out:" 
+  onfocus="(this.type='date')" 
+  onblur="if(!this.value)this.type='text'">
+            </div>
+            <div class="check-box guest">
+              <input type="number" class="check-input perRoom" placeholder="Room: 0"/>
+            </div>
+          </div>
+          <div class="room-gap"></div>
+          <div class="book-summary">
+            <h3>Date:</h3>
+            <p class="checkInUI">Check-In:</p>
+            <p class="checkOutUI">Check-Out:</p>
+            <p class="dateUI">Schedule:</p>
+            <p class="nightUI">Night:</p>
+            <p class="perRoomUI">Room: </p>
+          </div>
+          <div class="room-book">
+            <p class="priceUI">Price: $</p>
+            <div class="book-button bookButton">Book Now</div>
+          </div>
+        </div>
+        
+        <div class="room-scope-box executiveScope" id="executiveScope">
+          <div class="room-scope-img img4 image" id="roomScope"></div>
+          <div class="room-gap"></div>
+          <div class="room-check">
+            <div class="check-box check-in">
+              <input  class="check-input checkIn"
+  type="text" 
+  placeholder="Check-In:" 
+  onfocus="(this.type='date')" 
+  onblur="if(!this.value)this.type='text'">
+            </div>
+            <div class="check-box check-out">
+              <input  class="check-input checkOut"
+  type="text" 
+  placeholder="Check-Out:" 
+  onfocus="(this.type='date')" 
+  onblur="if(!this.value)this.type='text'">
+            </div>
+            <div class="check-box guest">
+              <input type="number" class="check-input perRoom" placeholder="Room: 0"/>
+            </div>
+          </div>
+          <div class="room-gap"></div>
+          <div class="book-summary">
+            <h3>Date:</h3>
+            <p class="checkInUI">Check-In:</p>
+            <p class="checkOutUI">Check-Out:</p>
+            <p class="dateUI">Schedule:</p>
+            <p class="nightUI">Night:</p>
+            <p class="perRoomUI">Room: </p>
+          </div>
+          <div class="room-book">
+            <p class="priceUI">Price: $</p>
+            <div class="book-button bookButton">Book Now</div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="amenities">
+      <div class="amenity-row">
+        <div class="amenity-mini-row">
+          <div class="amenity-box">
+            <div class="amenity-head">
+              <h1>Amenity 1</h1>
+            </div>
+            <div class="amenity-logo"></div>
+            <div class="amenity-context">Description:</div>
+          </div>
+          <div class="amenity-box">
+            <div class="amenity-head">
+              <h1>Amenity 2</h1>
+            </div>
+            <div class="amenity-logo"></div>
+            <div class="amenity-context">Description:</div>
+          </div>
+        </div>
+        <div class="amenity-mini-row">
+          <div class="amenity-box">
+            <div class="amenity-head">
+              <h1>Amenity 3</h1>
+            </div>
+            <div class="amenity-logo"></div>
+            <div class="amenity-context">Description:</div>
+          </div>
+          <div class="amenity-box">
+            <div class="amenity-head">
+              <h1>Amenity 4</h1>
+            </div>
+            <div class="amenity-logo"></div>
+            <div class="amenity-context">Description:</div>
+          </div>
+        </div>
+      </div>
+      <div class="amenity-gap"></div>
+      <div class="amenity-row">
+        <div class="amenity-mini-row">
+          <div class="amenity-box">
+            <div class="amenity-head">
+              <h1>Amenity 5</h1>
+            </div>
+            <div class="amenity-logo"></div>
+            <div class="amenity-context">Description:</div>
+          </div>
+          <div class="amenity-box">
+            <div class="amenity-head">
+              <h1>Amenity 6</h1>
+            </div>
+            <div class="amenity-logo"></div>
+            <div class="amenity-context">Description:</div>
+          </div>
+        </div>
+        <div class="amenity-mini-row">
+          <div class="amenity-box">
+            <div class="amenity-head">
+              <h1>Amenity 7</h1>
+            </div>
+            <div class="amenity-logo"></div>
+            <div class="amenity-context">Description:</div>
+          </div>
+          <div class="amenity-box">
+            <div class="amenity-head">
+              <h1>Amenity 8</h1>
+            </div>
+            <div class="amenity-logo"></div>
+            <div class="amenity-context">Description:</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="reviews">
+      <div class="reviews-left">
+        <h1>Reviews</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel turpis molestie tellus fermentum luctus. Praesent cursus vestibulum posuere. Nulla augue dolor, sagittis sit amet tincidunt sit amet, luctus sed nisi. Ut diam leo, malesuada et nunc vel, ultricies posuere mi.
+        </p>
+      </div>
+      <div class="reviews-clip">
+        <h1>Reviews</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel turpis molestie tellus fermentum luctus. Praesent cursus vestibulum posuere. Nulla augue dolor, sagittis sit amet tincidunt sit amet, luctus sed nisi. Ut diam leo, malesuada et nunc vel, ultricies posuere mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel turpis molestie tellus fermentum luctus. Praesent cursus vestibulum posuere. Nulla augue dolor, sagittis sit amet tincidunt sit amet, luctus sed nisi. Ut diam leo, malesuada et nunc vel, ultricies posuere mi.
+        </p>
+      </div>
+      <div class="reviews-right">
+        <h1>Reviews</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel turpis molestie tellus fermentum luctus. Praesent cursus vestibulum posuere. Nulla augue dolor, sagittis sit amet tincidunt sit amet, luctus sed nisi. Ut diam leo, malesuada et nunc vel, ultricies posuere mi.
+        </p>
+      </div>
+    </div>
+    
+    <div class="small-gap"></div>
+    
+    <div class="comments">
+      <div class="comment-summary"></div>
+      <div class="comment-container">
+        <div class="comment-box">
+          <div class="comment-header">
+            <div class="comment-pfp"></div>
+            <div class="comment-head">
+              <div class="comment-column">
+                <h3>Comment</h3>
+                <p>Date: ##/##/##</p>
+              </div>
+              <div>
+                Review:  5 Star
+              </div>
+            </div>
+          </div>
+          <div class="comment-context">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel commodo lectus, et dignissim tortor. Donec quam odio, ullamcorper quis gravida et, sodales id lectus. Sed varius, velit ac lobortis bibendum, sem dolor gravida purus, et euismod nibh lacus in turpis. Integer quis ex tincidunt, finibus nisl non, consectetur nibh.
+            </p>
+          </div>
+        </div>
+        <div class="comment-box">
+          <div class="comment-header">
+            <div class="comment-pfp"></div>
+            <div class="comment-head">
+              <div class="comment-column">
+                <h3>Comment</h3>
+                <p>Date: ##/##/##</p>
+              </div>
+              <div>
+                Review:  5 Star
+              </div>
+            </div>
+          </div>
+          <div class="comment-context">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel commodo lectus, et dignissim tortor. Donec quam odio, ullamcorper quis gravida et, sodales id lectus. Sed varius, velit ac lobortis bibendum, sem dolor gravida purus, et euismod nibh lacus in turpis. Integer quis ex tincidunt, finibus nisl non, consectetur nibh.
+            </p>
+          </div>
+        </div>
+        <div class="comment-box">
+          <div class="comment-header">
+            <div class="comment-pfp"></div>
+            <div class="comment-head">
+              <div class="comment-column">
+                <h3>Comment</h3>
+                <p>Date: ##/##/##</p>
+              </div>
+              <div>
+                Review:  5 Star
+              </div>
+            </div>
+          </div>
+          <div class="comment-context">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel commodo lectus, et dignissim tortor. Donec quam odio, ullamcorper quis gravida et, sodales id lectus. Sed varius, velit ac lobortis bibendum, sem dolor gravida purus, et euismod nibh lacus in turpis. Integer quis ex tincidunt, finibus nisl non, consectetur nibh.
+            </p>
+          </div>
+        </div>
+        <div class="comment-box">
+          <div class="comment-header">
+            <div class="comment-pfp"></div>
+            <div class="comment-head">
+              <div class="comment-column">
+                <h3>Comment</h3>
+                <p>Date: ##/##/##</p>
+              </div>
+              <div>
+                Review:  5 Star
+              </div>
+            </div>
+          </div>
+          <div class="comment-context">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel commodo lectus, et dignissim tortor. Donec quam odio, ullamcorper quis gravida et, sodales id lectus. Sed varius, velit ac lobortis bibendum, sem dolor gravida purus, et euismod nibh lacus in turpis. Integer quis ex tincidunt, finibus nisl non, consectetur nibh.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    
+    <div class="about-shaow-top"></div>
+    <div class="about">
+      <div class="about-bg"></div>
+      <div class="about-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel turpis molestie tellus fermentum luctus. Praesent cursus vestibulum posuere. Nulla augue dolor, sagittis sit amet tincidunt sit amet, luctus sed nisi. Ut diam leo, malesuada et nunc vel, ultricies posuere mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel turpis molestie tellus fermentum luctus. Praesent cursus vestibulum posuere. Nulla augue dolor, sagittis sit amet tincidunt sit amet, luctus sed nisi. Ut diam leo, malesuada et nunc vel, ultricies posuere mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel turpis molestie tellus fermentum luctus. Praesent cursus vestibulum posuere. Nulla augue dolor, sagittis sit amet tincidunt sit amet, luctus sed nisi. Ut diam leo, malesuada et nunc vel, ultricies posuere mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel turpis molestie tellus fermentum luctus. Praesent cursus vestibulum posuere. Nulla augue dolor, sagittis sit amet tincidunt sit amet, luctus sed nisi. Ut diam leo, malesuada et nunc vel, ultricies posuere mi.</p>
+      </div>
+      <h1>Footer</h1>
+    </div>
+    <div class="about-shaow-top"></div>
+    
+    <div class="contact-spacer"></div>
+    <div class="contact">
+      <div class="contact-content">
+        <h1>Contact Us</h1>
+        <div class="contact-socials">
+          <div class="social-row">
+            <div class="socials item1"></div>
+            <div class="socials item2"></div>
+          </div>
+          <div class="social-row">
+            <div class="socials item3"></div>
+            <div class="socials item4"></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-links">
+        <div class="contact-rows row1">
+          <h1>Service 1</h1>
+          <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+            <li>Link 4</li>
+            <li>Link 5</li>
+          </ul> 
+        </div>
+        <div class="contact-gap"></div>
+        <div class="contact-rows row2">
+          <h1>Service 1</h1>
+          <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+            <li>Link 4</li>
+            <li>Link 5</li>
+          </ul>
+        </div>
+        <div class="contact-gap"></div>
+        <div class="contact-rows row3">
+          <h1>Service 1</h1>
+          <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+            <li>Link 4</li>
+            <li>Link 5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="contact-spacer"></div>
+    
+    <script src="Reservation.js"></script>
+  </body>
+</html>

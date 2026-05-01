@@ -206,7 +206,7 @@ input, textarea, button {
 }
 
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
     .about .container {
         flex-direction: column;
     }
@@ -221,5 +221,25 @@ input, textarea, button {
     .skill .item {
         align-items: flex-start;
         text-align: start;
+    }
+} */
+
+
+
+@media (min-width: 481px) {
+    body {
+    background: blue;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+    background: green;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+    background: red;
     }
 }

@@ -58,21 +58,21 @@
             <div class="container">
                 <div class="item">
                     <img src="../Assets/project1.png" class="img">
-                    <h3>Project 1</h3>
+                    <h3>Gelo's Sweets</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur commodo.</p>
-                    <a href="" class="btn">Visit</a>
+                    <a href="../../Gelo's_Sweets/File/Gelo.html" class="btn">Visit</a>
                 </div>
                 <div class="item">
                     <img src="../Assets/project2.png" class="img">
-                    <h3>Project 2</h3>
+                    <h3>Hotel Suite</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur commodo.</p>
-                    <a href="" class="btn">Visit</a>
+                    <a href="../../Hotel_Suite/File/Hotel.html" class="btn">Visit</a>
                 </div>
                 <div class="item">
                     <img src="../Assets/project3.png" class="img">
-                    <h3>Project 3</h3>
+                    <h3>Just-In Clothing</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur commodo.</p>
-                    <a href="" class="btn">Visit</a>
+                    <a href="../../Just-In_Clothing/File/Just-In.html" class="btn">Visit</a>
                 </div>
             </div>
         </div>
@@ -123,5 +123,44 @@
             </form>
         </div>
     </div>
+
+    <script src="../../Main/File/Main.js"></script>
+
+
+    
+    <div id="pixel-counter" style="
+        position: fixed; 
+        top: 10px; 
+        right: 10px; 
+        background: rgba(0,0,0,0.8); 
+        color: white; 
+        padding: 10px; 
+        font-family: monospace; 
+        z-index: 9999; 
+        border-radius: 5px;
+        pointer-events: none;">
+        Width: 0px
+    </div>
+
+    <script>
+        const display = document.getElementById('pixel-counter');
+
+        function updatePixels() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            display.innerText = `Width: ${width}px | Height: ${height}px`;
+                
+            // Bonus: Color coding to help you see your ranges
+            if (width <= 480) display.style.color = "#ff4d4d";      // Mobile
+            else if (width <= 1024) display.style.color = "#ffcc00"; // Tablet
+            else display.style.color = "#00ffcc";                   // Desktop
+            }
+
+            // Update on load
+            updatePixels();
+
+            // Update every time the window is resized
+        window.addEventListener('resize', updatePixels);
+    </script>
 </body>
 </html>
