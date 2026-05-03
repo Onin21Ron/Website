@@ -15,54 +15,76 @@ html {
   scroll-behavior: smooth;
 }
 
-/* h1 {
-  -- Minimum: 1.5rem, Preferred: 5vw, Maximum: 3rem --
-  font-size: clamp(1.5rem, 5vw, 3rem);
-} */
-
-/* Smallest < 480px Small to large smartphones (iPhone, Pixel)
-Mid (Small) 481px – 768px Large phones in landscape or small tablets
-Mid (Large) 769px – 1024px Standard tablets (iPad), small laptops
-High 1025px – 1200px Laptops and desktop monitors
-Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
-
+body {
+  overflow-x: hidden;
+}
 
 .cupcake {
-  height: 80vh;
-  width: 100vw;
-  background: blue;
+  height: clamp(100vh, 90vh + 15vw, 110vh);
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 2rem 0;
+  text-align: center;
 }
 .cupcake .container {
   height: 100%;
-  width: 98%;
-  background: yellow;
-  /* display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 17rem; */
-  /* grid-template-rows: repeat(auto-fill, minmax(200px, 1fr)); */
-  /* aspect-ratio: 1/1; */
+  width: 100%;
+  background: #ffafcc;
   gap: 1rem;
   overflow-x: auto;
   padding: 1rem;
   display: flex;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.cupcake .container:first-child{
-  border-radius: 10rem 0 0 10rem;
-  margin-left: 2%;
+
+.cupcake .container::-webkit-scrollbar {
+    display: none;
 }
-.cupcake .container:last-child {
-  border-radius: 0 10rem 10rem 0;
-  margin-right: 2%;
-}
-.cupcake-box {
+
+
+.cupcake .item {
   height: 100%;
   aspect-ratio: 1/1;
-  background: red;
+  background: #a2d2ff;
   border-radius: 50%;
+}
+.cupcake .img {
+  height: 100%;
+  width: 100%;
+}
+.cupcake .img1 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/1.png") center /cover no-repeat;
+}
+.cupcake .img2 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/2.png") center /cover no-repeat;
+}
+.cupcake .img3 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/3.png") center /cover no-repeat;
+}
+.cupcake .img4 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/4.png") center /cover no-repeat;
+}
+.cupcake .img5 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/5.png") center /cover no-repeat;
+}
+.cupcake .img6 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/6.png") center /cover no-repeat;
+}
+.cupcake .img7 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/7.png") center /cover no-repeat;
+}
+.cupcake .img8 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/8.png") center /cover no-repeat;
+}
+.cupcake .img9 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/9.png") center /cover no-repeat;
+}
+.cupcake .img10 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/10.png") center /cover no-repeat;
 }
 
 .nav-wrap {
@@ -77,6 +99,7 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   justify-content: center;
   align-items: center;
   z-index: 999;
+  display: none;
 }
 
 .nav-wrap .header {
@@ -200,45 +223,34 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   opacity: 0.4;
 }
 
-.nav.about-active .about {
+.nav.about-active .nav-about {
   transform: translateX(100%) scale(1.2);
 }
-.nav.about-active .home {
+.nav.about-active .nav-home {
   transform: translateX(-100%);
 }
-.nav.about-active .others {
+.nav.about-active .nav-others {
   transform: translateX(0);
 }
 
-.nav.home-active .about {
+.nav.home-active .nav-about {
   transform: translateX(0);
 }
-.nav.home-active .home {
+.nav.home-active .nav-home {
   transform: translateX(0) scale(1.2);
 }
-.nav.home-active .others {
+.nav.home-active .nav-others {
   transform: translateX(0);
 }
 
-.nav.others-active .about {
+.nav.others-active .nav-about {
   transform: translateX(0);
 }
-.nav.others-active .home {
+.nav.others-active .nav-home {
   transform: translateX(100%);
 }
-.nav.others-active .others {
+.nav.others-active .nav-others {
   transform: translateX(-100%) scale(1.2);
-}
-
-
-.hero {
-  height: 101vh;
-  width: 100%;
-  animation: head 20s linear infinite;
-  position: relative;
-  z-index: -1;
-  padding: 3rem;
-  overflow-x: hidden;
 }
 
 @keyframes head {
@@ -261,34 +273,36 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
 
 .orbit {
   position: absolute;
-  height: 500px;
-  width: 500px;
-  right: 1.5rem;
-  top: 50%;
+  min-width: 500px;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   background: #a2d2ff;
   animation-timing-function: ease-in-out;
   animation: rotate 20s linear infinite;
-  z-index: 3;
-
-  display: none;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.8;
+  left: 50%;
+  bottom: 0;
 }
 
 @keyframes rotate {
   0%, 10% {
-    transform: translateY(-50%) rotate(0deg);
+    transform: translateY(50%) translateX(-50%) rotate(0deg);
   }
   25%, 35% {
-    transform: translateY(-50%) rotate(90deg);
+    transform: translateY(50%) translateX(-50%) rotate(90deg);
   }
   50%, 60% {
-    transform: translateY(-50%) rotate(180deg);
+    transform: translateY(50%) translateX(-50%) rotate(180deg);
   }
   75%, 85% {
-    transform: translateY(-50%) rotate(270deg);
+    transform: translateY(50%) translateX(-50%) rotate(270deg);
   }
   100% {
-    transform: translateY(-50%) rotate(360deg);
+    transform: translateY(50%) translateX(-50%) rotate(360deg);
   }
 }
 
@@ -380,22 +394,45 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   }
 }
 
-.header {
-  background-color: yellow;
-  height: 70%;
-  width: 50%;
+.hero {
+  height: 101vh;
+  width: 100%;
+  animation: head 20s linear infinite;
+  position: relative;
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+.hero .container {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hero .context {
+  /* background-color: yellow; */
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .hero h1 {
   font-weight: 950;
-  font-size: 7rem;
-  line-height: 6rem;
+  font-size: clamp(1rem, 10vw + 2rem, 6rem);
   margin-bottom: 0.5rem;
   color: #c1121f;
   filter: drop-shadow(0 0 1px black);
+
+  /* font-size: 7rem; */
+  line-height: clamp(1rem, 10vw + 2rem, 6rem);
 }
 
 .hero h1:hover {
@@ -404,16 +441,15 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
 
 .hero p {
   margin: 0 0 1rem 0.5rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 }
 
-.hero h3 {
-  margin-left: 1rem;
-  display: flex;
-  justify-content: center;
-  width: 30%;
+.hero .btn {
+  width: auto;
   padding: 0.2rem 0.5rem;
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 0.5rem + 2vw, 2rem);
+
   background: #ffc8dd;
   border: 2px solid #ffafcc;
   border-radius: 3rem;
@@ -421,50 +457,45 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   cursor: pointer;
 }
 
-.hero .header .button:hover {
+.hero .context .btn:hover {
   color: white;
 }
 
-.hero .menu {
-  height: 30%;
-  width: 100%;
-  /* background: blue; */
-  
-}
 
-.hero .menu .menu-container {
-  height: 100%;
-  width: 50%;
+.hero .menu {
+  width: 100%;
   gap: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .menu .box {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  max-width: 100px; */
+  height: 100px;
+  aspect-ratio: 1/1;
   background: #ffe5de;
-  border-radius: 1.5rem;
   position: relative;
-  border-radius: 2px solid #ffe5de;
+
+  border: 2px solid #ffe5de;
+  border-radius: clamp(10px, 5vw, 20px);
 }
 
-.hero .img1 {
+.hero .img {
   height: 100%;
   width: 100%;
-  background: url("Head/1m.png") center /cover no-repeat;
+}
+.hero .img1 {
+  background: url("../../Gelo's_Sweets/Assets/Product/Other/1m.png") center /cover no-repeat;
 }
 
 .hero .img2 {
-  height: 100%;
-  width: 100%;
-  background: url("Head/2m.png") center /cover no-repeat;
+  background: url("../../Gelo's_Sweets/Assets/Product/Other/2m.png") center /cover no-repeat;
 }
 
 .hero .img3 {
-  height: 100%;
-  width: 100%;
-  background: url("Head/3m.png") center /cover no-repeat;
+  background: url("../../Gelo's_Sweets/Assets/Product/Other/3m.png") center /cover no-repeat;
 }
 
 .hero .box .text {
@@ -492,34 +523,22 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
 .introduction {
   height: 100vh;
   width: 100%;
-  background: red;
-  /* padding: 5rem; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .introduction .container {
-  height: 80%;
-  width: 50rem;
-  max-width: 80%;
-  background: #ffe5de;
-  border-radius: 2rem;
-
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.introduction .content {
-  height: 100%;
   width: 100%;
-  padding: 3rem;
+  background: #cdb4db;
+  padding: 2.5rem clamp(0rem, 6vw + -0.4rem, 3rem);
 }
-.introduction .img {
-  height: 100%;
-  width: 100%;
-  background: yellow;
-  /* background: url("Introduction/1.jpg") center / cover no-repeat; */
+.introduction h1 {
+  font-size: clamp(1rem, 10vw + 0.2rem, 2.5rem);
+  font-weight: 900;
+  text-align: center;
+}
+.introduction p {
+  
 }
 
 .custom-shape-divider-top-1771168354 {
@@ -527,8 +546,10 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
-    overflow: hidden;
+    
+    width:  768px;
+    min-width: 100%;
+    overflow-x: hidden;
     line-height: 0;
 }
 
@@ -576,7 +597,6 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   width: 100%;
   text-align: center;
   position: relative;
-  /* background: blue; */
 }
 
 .new-product .text {
@@ -589,12 +609,11 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   height: auto;
   width: 100%;
   /* background: purple; */
-  gap: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem
+  gap: 1rem;
 }
 
 .new-product .box {
@@ -694,7 +713,7 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
 }
 
 .spacer {
-  height: 50vh;
+  height: clamp(30vh, 25vh + 10vw, 50vh);
   width: 100%;
   /* background: black; */
 }
@@ -709,28 +728,30 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
 }
 .cake .container {
   height: auto;
   width: 100%;
-  background: blue;
+  max-width: 450px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  
   gap: 1rem;
   margin-top: 1rem;
 }
 .cake .wrap {
-  height: auto;
+  height: 100%;
   width: 100%;
-  background-color: yellow;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
 }
 
 .cake .box {
   width: 100%;
+  max-width: 250px;
   aspect-ratio: 1/1.2;
   background: #461220;
   /* border: 2px solid #8c2f39; */
@@ -824,34 +845,37 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
 .coffee {
   height: auto;
   width: 100%;
-  text-align: center;
 }
-
+.coffee .title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw + 0.5rem, 4rem);
+  margin-bottom: 1rem;
+}
 .coffee .container {
   height: auto;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  background: blue;
+  gap: clamp(0.5rem, 5vw + -0.2rem, 1rem);
 }
 
 .coffee .wrap {
-  background: purple;
+  /* background: purple; */
   height: 100%;
   width: 50%; 
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: clamp(0.5rem, 5vw + -0.2rem, 1rem);
   justify-content: center;
   align-items: center;
 }
 
 .coffee .box {
   aspect-ratio: 1/1.2;
-  width: 80%;
-  border-radius: 3rem;
+  width: 100%;
+  max-width: 200px;
+  border-radius: clamp(10px, 5vw, 40px);
   background: #ede0d4;
   display: flex;
   align-items: flex-end;
@@ -862,7 +886,7 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   height: 40%;
   width: 100%;
   /* background: magenta; */
-  border-radius: 3rem;
+  border-radius: clamp(10px, 5vw, 40px);
   overflow: hidden;
 }
 
@@ -899,89 +923,73 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   background: url("../../Gelo's_Sweets/Assets/Product/Coffee/6.png") center / cover no-repeat;
 }
 
-.coffee .content h1 {
+.coffee .content h1, .coffee .content h3 {
+  height: 50%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
-  width: 100%;
+} 
+.coffee .content h1 {
   background: #ddbb92;
   font-weight: 900;
-  /* background: plum; */
+  font-size: clamp(1.2rem, 5vw + 0.5rem, 2rem);
 }
+
 .coffee .content h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50%;
-  width: 100%;
   background: #e6ccb2;
-  border: 0 2px 2px 2px solid #ede0d4;
-  border-radius: 0 0 3rem 3rem;
   font-weight: 500;
-  /* background: lightyellow; */
+  font-size: clamp(0.8rem, 2.5vw + 0.5rem, 1.5rem);
 }
 
 
 
-.content .about-gap {
+.about-gap {
   width: 100%;
   height: 50vh;
   box-shadow: 0 -50px 50px 50px black;
   background: black;
 }
 
-.content .about {
+.about {
   height: 100vh;
   width:  100%;
   background: black;
   position: relative;
 }
 
-.content .about .about-container {
+.about .container {
   height: 100%;
   width: 100%;
   position: relative;
   background: black;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.content .about .about-container .about-content {
-  height: 100%;
-  width: 100%;
-  padding: 10rem 10rem 2rem 10rem;
-  /* background: blue; */
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.content .about .about-container .about-content .about-context {
+.about .context {
+  position: absolute;
   height: 100%;
   width: 60%;
   /* background: purple; */
   align-content: center;
   color: white;
 }
-.content .about .about-container .about-content .about-context h1 {
+.about h1 {
   font-weight: 900;
-  font-size: 5rem;
+  font-size: clamp(2rem, 4vw + 0.5rem, 4rem);
+}
+.about p {
+  font-size: clamp(0.8rem, 2.5vw + 0.2rem, 1rem);
 }
 
-.content .about .about-container .about-content .about-content-img {
-  height: 100%;
-  width: 30%;
-  background: url("About/2.jpg") center / cover no-repeat;
-  border-radius: 1rem;
-}
-
-.content .about .about-container .about-bg {
+.about .bg {
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: 768px;
+  min-width: 100%;
   background: url("../../Gelo's_Sweets/Assets/Background/1.jpg") center /cover no-repeat;
   border-radius: 50% 50% 0 0;
   box-shadow: inset 0 30px 30px 10px black;
@@ -989,67 +997,218 @@ Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
   filter: blur(2px);
 }
 
+
+
 .contact {
   background: black;
-  height: 70vh;
+  height: auto;
   width: 100%;
-  padding: 2rem;
-  padding-bottom: 0;
+  padding-top: 2rem;
 }
 
-.contact-container {
-  height: 100%;
+.contact .container {
+  height: auto;
   width: 100%;
-  /* background: black; */
   border: 2px solid #222;
-  border-radius: 2rem 2rem 0 0;
-  padding: 2rem 3rem;
+  padding: 2rem 1rem;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.contact-container .column1 {
-  height: 100%;
-  width: 60%;
+.contact .wrap {
+  height: auto;
+  width: 100%;
+  
 }
-.column-context {
-  height: 80%;
+.contact .wrap:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact .service {
+  /* background: grey; */
+  width: 100%;
+}
+
+.contact .context {
+  height: auto;
+  width: 100%;
   padding-right: 2rem;
 }
-.contact-container .column1 .column-context h1 {
+.contact .context h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-.contact-container .column1 .column-context p {
+.contact .context p {
   font-weight: 400;
+  /* font-size: clamp(0.2rem, 2vw + 0.5rem, 2rem); */
 }
-.contact-container .column1 .socials {
+
+.contact .social {
   display: flex;
-  justify-content: flex-start;
-  height: 20%;
-  width: 100%;
-  gap: 1rem
+  height: auto;
+  width: auto;
+  gap: clamp(0.5rem, 2vw + 0.2rem, 0.5rem);
+  margin-top: 1rem;
 }
-.social {
-  height: 100%;
+.social .f {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  gap: clamp(0.5rem, 2vw + 0.2rem, 0.5rem);
+}
+.social .item {
+  /* width: 50px; */
+  width: clamp(50px, 5vw + 30px, 60px);
   aspect-ratio: 1/1;
   background: purple;
   border-radius: 50%;
 }
 
-.contact-service {
-  height: 100%;
-  width: 20%;
-  /* background: blue; */
+
+body { 
+  background: white; 
 }
-.contact-service h1 {
-  margin-bottom: 1rem;
+@media (min-width: 481px) {
+    body { 
+      /* background: blue;  */
+    }
+
+    .introduction .container {
+      border-radius: clamp(10px, 10vw + 5px, 40px);
+      margin: 0 clamp(1rem, 10vw + -2rem, 3rem);
+      padding: clamp(1rem, 4vw + -0.4rem, 2rem) clamp(0rem, 6vw + -0.4rem, 3rem);
+    }
+    .introduction h1 {
+      text-align: start;
+    }
+
+    .new-product .container {
+      flex-direction: row;
+    }
+
+    .cake .container {
+      max-width: 450px;
+      display: flex;
+      
+    }
+    .cake .wrap {
+      flex-direction: row;
+    }
+    
+    .coffee .container {
+      display: block;
+    }
+    .coffee .wrap {
+      height: 50%;
+      width: 100%;
+      flex-direction: row;
+    }
+
+    .contact {
+      padding: 2rem 1rem 0 1rem;
+    }
+    .contact .container {
+      padding: 2rem;
+      border-radius: 2rem 2rem 0 0;
+    }
+    .contact .wrap:last-child {
+      flex-direction: row;
+    }
+    
+    .cupcake .container {
+      width: 98%;
+    }
+    .cupcake .container.first {
+      border-radius: 10rem 0rem 0rem 10rem;
+      margin-left: auto;
+    }
+    .cupcake .container.second {
+      border-radius: 0 10rem 10rem 0;
+      margin-right: auto;
+    }
+
+    .social .wrap {
+      height: 100px;
+      flex-direction: row;
+    }
 }
-.contact-service li {
-  padding-left: 1rem;
+
+@media (min-width: 768px) {
+    body { 
+      /* background: green;  */
+    }
+    
+    .hero .context {
+      margin-left: 3rem;
+      align-items: flex-start;
+    }
+    .hero .btn {
+      margin-left: 1rem;
+    }
+    .hero .menu {
+      margin-bottom: 3rem;
+    }
+    .hero .box {
+      aspect-ratio: 1.1/1;
+    }
+
+    .cupcake .container {
+      width: 95%;
+    }
+
+    .cake .container {
+      max-width: 768px;
+      flex-direction: row;
+    }
+
+    .orbit {
+      bottom: 50%;
+      left: 100%;
+      opacity: 1;
+    }
+
+    .hero .container {
+      width: 50%;
+    }
+    .hero .context {
+      text-align: start;
+    }
+
+    .contact .container {
+      flex-direction: row;
+      padding: 2rem 3rem;
+    }
+    .contact {
+      padding: 2rem 2rem 0 2rem;
+    }
 }
+
+@media (min-width: 1024px) {
+    body { background: red; }
+}
+
+
+
+@media (max-width: 281px) {
+  .hero .menu {
+    display: none;
+  }
+  .social .f {
+    flex-direction: column;
+  }
+}
+
+/* font-size: clamp(1rem, 4vw, 1.5rem);
+font-size: clamp(1rem, 2.5vw + 0.5rem, 1.5rem);
+Min: 0.8rem
+Val: 5vw
+Max: 3rem */
 
 /* Smallest < 480px Small to large smartphones (iPhone, Pixel)
 Mid (Small) 481px – 768px Large phones in landscape or small tablets
@@ -1057,53 +1216,7 @@ Mid (Large) 769px – 1024px Standard tablets (iPad), small laptops
 High 1025px – 1200px Laptops and desktop monitors
 Highest > 1201px Large desktops, ultrawide monitors, 4K TVs */
 
-/* @media (min-width: 481px) {
-    body {
-      background: blue;
-    }
-}
-
-@media (min-width: 768px) {
-    body {
-      background: green;
-    }
-}
-
-@media (min-width: 1024px) {
-    body {
-      background: red;
-    }
-
-    
+/* h1 {
+  -- Minimum: 1.5rem, Preferred: 5vw, Maximum: 3rem --
+  font-size: clamp(1.5rem, 5vw, 3rem);
 } */
-
-body { 
-  background: white; 
-}
-@media (min-width: 481px) {
-    body { 
-      background: blue; 
-    }
-
-    .new-product .container {
-      flex-direction: row;
-    }
-}
-
-@media (min-width: 768px) {
-    body { 
-      background: green; 
-    }
-
-    .orbit {
-      display: block;
-    }
-
-    .cake .wrap {
-      flex-direction: row;
-    }
-}
-
-@media (min-width: 1024px) {
-    body { background: red; }
-}
