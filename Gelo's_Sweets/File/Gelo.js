@@ -1,3 +1,11 @@
+const menu = document.querySelector("#mobile_menu");
+const menuLinks = document.querySelector(".section");
+
+menu.addEventListener('click', function() {    
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+});
+
 const nav = document.querySelector('.nav');
 const items = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll(".section");

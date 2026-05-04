@@ -10,14 +10,14 @@ a {
   color: black;
   text-decoration: none;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   overflow-x: hidden;
 }
+
+
 
 .cupcake {
   height: clamp(100vh, 90vh + 15vw, 110vh);
@@ -40,12 +40,9 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-
 .cupcake .container::-webkit-scrollbar {
     display: none;
 }
-
-
 .cupcake .item {
   height: 100%;
   aspect-ratio: 1/1;
@@ -87,58 +84,58 @@ body {
   background: url("../../Gelo's_Sweets/Assets/Product/Cupcake/10.png") center /cover no-repeat;
 }
 
-.nav-wrap {
+
+
+.nav {
   /* background: #eee; */
-  height: 80px;
+  height: auto;
   width: 100%;
   position: sticky;
   margin-top: -15vh;
   top: 0;
-  padding: 5vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 999;
-  display: none;
 }
-
-.nav-wrap .header {
+.nav .header {
   color: #c1121f;
   opacity: 0;
-  font-size: 3rem;
+  font-size: clamp(2rem, 6vw + 1.5rem, 3rem);
+  line-height: clamp(1.5rem, 6vw + 1rem, 2.5rem);
   font-weight: 900;
-  position: absolute;
-  left: 1rem;
   transition: 0.3s ease;
+  padding: 1rem;
 }
-
-.nav-wrap .header.act {
+.nav .header.act {
   opacity: 1;
 }
-
-.nav-wrap .header:hover {
+.nav .header:hover {
   color: white;
 }
-
-.orders {
-  position: absolute;
-  right: 1rem;
-  place-items: center;
-  display: flex;
-  gap: 5px;
+.nav .buy {
+  display: none;
+}
+.nav .orders {
+  display: none;
   justify-content: center;
   align-items: center;
+  background: blue;
+  gap: 5px;
 }
-
 .orders .search {
   background: white;
   border-radius: 3rem;
   height: 3rem;
   width: 3rem;
   border: 2px solid #dddddd;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+}
+.circle {
+  height: 100%;
+  aspect-ratio: 1/1;
 }
 .orders .search .img {
   height: 70%;
@@ -171,58 +168,6 @@ body {
   transform: scale(0.9);
 }
 
-.nav-wrap h3 {
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
-  border: 2px solid #ffafcc;
-  border-radius: 3rem;
-  background: #ffc8dd;
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  color: #c1121f;
-  transition: 0.3s ease;
-}
-.nav-wrap h3:hover {
-  color: white;
-}
-
-.nav {
-  height: 100%;
-  width: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-item {
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  background: #d4a373;
-  border-radius: 2px;
-  height: 100%;
-  width: 100%;
-  display: grid;
-  place-items: center;
-  transition: 0.6s ease, color 0.6s ease;
-  cursor: pointer;
-  color: rgba(0,0,0,0.4);
-}
-
-.nav-item:hover {
-  color: rgba(0,0,0,1);
-}
-
-
-.nav-item.active {
-  transform: scale(1.2);
-  opacity: 1;
-  color: rgba(0,0,0,1);
-}
-
-.nav-item:not(.active) {
-  opacity: 0.4;
-}
-
 .nav.about-active .nav-about {
   transform: translateX(100%) scale(1.2);
 }
@@ -252,6 +197,81 @@ body {
 .nav.others-active .nav-others {
   transform: translateX(-100%) scale(1.2);
 }
+
+.nav .section {
+  background-color: red;
+  border-bottom: 2px black solid;
+  padding: 4rem 1rem 1rem 1rem;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  top: -500px;
+  transition: all 0.8s ease;
+}
+.nav .section.active {
+  top: 0;
+}
+.nav .item {
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  background: #d4a373;
+  border-radius: 2px;
+  /* transition: 0.6s ease, color 0.6s ease; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  /* color: rgba(0,0,0,0.4); */
+}
+.nav .btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 2px;
+  background: #ffc8dd;
+  font-weight: 800;
+  letter-spacing: -0.08rem;
+  line-height: 1.2rem;
+  color: #c1121f;
+  transition: 0.3s ease;
+  text-align: center;
+}
+.nav .btn:hover {
+  color: white;
+}
+
+.topbar {
+  z-index: 999;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.topbar:hover {
+  transition: 0.2s ease;
+  scale: 1.2;
+}
+.topbar.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.topbar.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.topbar.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);  
+}
+.topbar .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #c1121f;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+
+
+
 
 @keyframes head {
   0%, 10% {
@@ -531,18 +551,17 @@ body {
   width: 100%;
   background: #cdb4db;
   padding: 2.5rem clamp(0rem, 6vw + -0.4rem, 3rem);
+  text-align: center;
 }
 .introduction h1 {
   font-size: clamp(1rem, 10vw + 0.2rem, 2.5rem);
   font-weight: 900;
-  text-align: center;
 }
-.introduction p {
+/* .introduction p {
   
-}
+} */
 
-.custom-shape-divider-top-1771168354 {
-    /* transform: translateY(100%); */
+/* .custom-shape-divider-top-1771168354 {
     position: absolute;
     top: 100%;
     left: 0;
@@ -552,7 +571,6 @@ body {
     overflow-x: hidden;
     line-height: 0;
 }
-
 .custom-shape-divider-top-1771168354 svg {
     position: relative;
     display: block;
@@ -560,14 +578,9 @@ body {
     height: 101px;
     transform: rotateY(180deg);
 }
-
 .custom-shape-divider-top-1771168354 .shape-fill {
-    /* fill: #FFFFFF; */
     animation: fill-head 20s linear infinite;
-    /* animation: fill-head 20s linear infinite; */
-}
-
-
+} */
 
 @keyframes fill-head {
   0%, 10% {
@@ -985,7 +998,7 @@ body {
   font-size: clamp(0.8rem, 2.5vw + 0.2rem, 1rem);
 }
 
-.about .bg {
+/* .about .bg {
   position: absolute;
   height: 100%;
   width: 768px;
@@ -995,7 +1008,8 @@ body {
   box-shadow: inset 0 30px 30px 10px black;
   opacity: 0.8;
   filter: blur(2px);
-}
+  overflow: hidden;
+} */
 
 
 
@@ -1079,7 +1093,28 @@ body {
       /* background: blue;  */
     }
 
+    .topbar {
+      display: none;
+    }
+    .nav .section {
+      display: none;
+    }
+
+    .nav .buy {
+      display: block;
+      margin-right: 1rem;
+    }
+    .nav .btn {
+      font-size: clamp();
+      /* padding: 0.2rem 0.5rem; */
+    }
+
+    .nav .orders {
+      display: flex;
+    }
+
     .introduction .container {
+      text-align: start;
       border-radius: clamp(10px, 10vw + 5px, 40px);
       margin: 0 clamp(1rem, 10vw + -2rem, 3rem);
       padding: clamp(1rem, 4vw + -0.4rem, 2rem) clamp(0rem, 6vw + -0.4rem, 3rem);
@@ -1142,6 +1177,40 @@ body {
 @media (min-width: 768px) {
     body { 
       /* background: green;  */
+    }
+    
+    .nav .section {
+      background-color: transparent;
+      width: auto;
+      top: 0;
+      padding: 1rem;
+      border: none;
+      flex-direction: row;
+      height: 100%;
+      gap: 0;
+      transition: none;
+      position: relative;
+      padding: 0;
+    }
+    .nav .item {
+      height: auto;
+      width: auto;
+      padding: 0.2rem 0.5rem;
+    }
+    .nav .section .btn {
+      display: none
+    }
+
+    .nav .item:hover {
+      color: rgba(0,0,0,1);
+    }
+    .nav .item.active {
+      transform: scale(1.2);
+      opacity: 1;
+      color: rgba(0,0,0,1);
+    }
+    .nav .item:not(.active) {
+      opacity: 0.4;
     }
     
     .hero .context {
