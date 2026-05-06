@@ -43,6 +43,17 @@ function notifSystem(value) {
   }, 5000);
 }
 
+
+const menu = document.querySelector("#mobile");
+const container = document.querySelector("#menu");
+
+menu.addEventListener('click', function() {    
+    menu.classList.toggle('active');
+    container.classList.toggle('active');
+});
+
+
+
 const zoomExit = document.getElementById("zoomExit");
 const roomScope = document.getElementById("roomScope");
 const zoomSection = document.getElementById("zoomSection");
