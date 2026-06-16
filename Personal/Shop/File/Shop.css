@@ -1,0 +1,828 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: none; /* Required for some browser default styles, like in Bootstrap */
+}
+.spacer {
+  height: 50vh;
+  width: 100%;
+}
+.min-spacer {
+  height: 20vh;
+  width: 100%;
+}
+.title {
+  text-align: center;  
+}
+
+.fill {
+  display: none;
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  width: 100vw;
+  background: rgba(50, 50, 50, 0.3);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+  z-index: 999;
+}
+.fill.active {
+  display: block;
+  pointer-events: auto;
+}
+
+.contact {
+  height: 100%;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.contact.active {
+  display: flex;
+}
+.contact .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.contact a {
+  width: 100%;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: yellow;
+}
+
+.payment {
+  height: 100%;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space;
+}
+.payment.active {
+  display: flex;
+}
+.payment .product {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.payment .img {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background: violet;
+}
+.payment .purchase {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.payment .title {
+  height: auto;
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.payment .description {
+  height: 100%;
+  width: 100%;
+}
+.payment .buy {
+  padding: 1rem;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.payment .buy:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #222;
+  transition: all 0.6s ease;
+}
+.payment .buy:hover h1 {
+  color: #fff;
+  transform: scale(1.2);
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+.payment .buy:hover:after {
+  width: 100%;
+}
+
+.nav {
+  /* background: blue; */
+  height: auto;
+  width: 100%;
+  position: sticky;
+  margin-top: -25vh;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+.nav .header {
+  /* color: #c1121f; */
+  color: yellow;
+  opacity: 0;
+  font-size: clamp(2rem, 6vw + 1.5rem, 3rem);
+  line-height: clamp(1.5rem, 6vw + 1rem, 2.5rem);
+  font-weight: 900;
+  transition: 0.3s ease;
+  padding: 1rem;
+}
+
+.nav .section {
+  background-color: red;
+  border-bottom: 2px black solid;
+  padding: 4rem 1rem 1rem 1rem;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  top: -500px;
+  transition: all 0.8s ease;
+}
+.nav .section.active {
+  top: 0;
+}
+
+.nav .item {
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  background: #d4a373;
+  border-radius: 2px;
+  /* transition: 0.6s ease, color 0.6s ease; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  /* color: rgba(0,0,0,0.4); */
+}
+.nav .btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 2px;
+  background: #ffc8dd;
+  font-weight: 800;
+  letter-spacing: -0.08rem;
+  line-height: 1.2rem;
+  color: #c1121f;
+  transition: 0.3s ease;
+  text-align: center;
+}
+.nav .btn:hover {
+  color: white;
+}
+
+.topbar {
+  z-index: 999;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.topbar:hover {
+  transition: 0.2s ease;
+  scale: 1.2;
+}
+.topbar.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.topbar.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.topbar.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);  
+}
+.topbar .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #c1121f;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.hero .head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.hero input {
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  border: 0.2px solid #000;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.hero .container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.hero .item {
+  position: relative;
+  width: 100%;
+  border: 0.5px solid #000;
+  text-align: center;
+  position: relative;
+  font-size: 1.2rem;
+  display: flex;
+  transition: 0.4s ease;
+  opacity: 1;
+  pointer-events: auto;
+}
+/* .hero .item:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+} */
+.hero a {
+  padding: 0.5rem;
+  width: 100%;
+}
+.hero .arrow {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease;
+}
+.hero .bar {
+  width: 0.8rem;
+  height: 1px;
+  background: #000;
+  display: block;
+  transition: 0.2s ease;
+}
+.hero .bar:first-child {
+  transform: translateX(10%) rotate(35deg);
+}
+.hero .bar:last-child {
+  transform: translateX(-10%) rotate(-35deg);
+}
+.hero .link {
+  position: absolute;
+  transform: translateY(3rem);
+  background: #f4f4f4;
+  height: 0;
+  width: 100%;
+  transition: 0.6s ease;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 2rem;
+  overflow: auto;
+  transition: 0.6s ease;
+}
+
+.hero .item.active .arrow {
+  right: -0.3rem;
+}
+.hero .item.active .bar {
+  width: 1.5rem;
+  height: 2px;
+}
+.hero .item.active .link {
+  height: auto;
+  border: 0.5px solid #000;
+}
+.hero .item.active .bar:first-child {
+  transform: translateX(50%) rotate(225deg);
+}
+.hero .item.active .bar:last-child {
+  transform: translateX(-50%) rotate(-225deg);
+}
+
+/* ONLY trigger when .hero has '.active-present', 
+  and hide the items that DO NOT have '.active' 
+*/
+.hero.active .item:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.artwork {
+    height: auto;
+    width: 100%;
+}
+.artwork h1 {
+    text-align: center;
+}
+
+.wallpaper {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/* .wallpaper .head {
+
+} */
+.wallpaper .container {
+  height: 50vh;
+  width: 100%;
+  gap: 2rem;
+  display: flex;
+  overflow-x: auto;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.wallpaper .item {
+  padding: 1rem;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  gap: 1rem;
+  border: 0.2px solid #000;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.wallpaper .scroll {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wallpaper .btn {
+  background: #eee;
+  width: clamp(2rem, 0.5rem + 5vw, 2.5rem);
+  opacity: 0.5;
+  height: 80%;
+  transition: 0.6s ease;
+  border: 1px #ddd solid;
+}
+.wallpaper .btn:hover {
+  width: clamp(2.5rem, 1rem + 5vw, 3rem);
+  opacity: 1;
+}
+.wallpaper .left {
+  border-radius: 0 1.5rem 1.5rem 0;
+  border-left: 0;
+}
+.wallpaper .right {
+  border-radius: 1.5rem 0 0 1.5rem;
+  border-right: 0;
+}
+
+.emoji {
+  height: auto;
+  width: 100%;
+}
+.emoji .container {
+  height: auto;
+  width: 100%;
+  /* width: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.emoji .wrap {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.emoji .item {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1/1;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 0.2px solid #000;
+}
+.emoji .img {
+    position: absolute;
+    inset: 0;
+}
+.emoji .content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.emoji .name {
+    transform: translateY(-100%);
+    transition: 0.6s ease;
+}
+.emoji .item:hover .name {
+    transform: translateY(0);
+}
+.emoji .purchase {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateY(100%);
+    transition: 0.6s ease;
+}
+.emoji .item:hover .purchase {
+    transform: translateY(0);
+}
+.emoji .buy {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.emoji .cart {
+    width: 20%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.emoji .buy:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #222;
+  transition: all 0.6s ease;
+}
+.emoji .buy:hover h1 {
+  color: #fff;
+  transform: scale(1.2);
+  z-index: 1;
+}
+.emoji .buy:hover:after {
+  width: 100%;
+}
+.emoji .cart:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #222;
+  transition: all 0.35s ease;
+}
+.emoji .cart:hover:after {
+  width: 100%;
+}
+
+.pin {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.pin .container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.pin .item {
+  height: 220px;
+  aspect-ratio: 1/1;
+  border: 0.2px solid #000;
+  border-radius: 50%;
+}
+.pin h3 {
+  text-align: center;
+  width: 100%;
+  border: 0.2px solid #000;
+  padding: 0.5rem 0;
+}
+
+.affliate {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.camping {
+  height: auto;
+  width: 100%;
+}
+.camping .container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.camping .wrap {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.camping .item {
+  width: 100%;
+  /* max-width: 220px; */
+  max-width: 320px;
+  aspect-ratio: 1/1.5;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #eee;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.camping .img {
+  height: 50%;
+  width: 100%;
+  background: yellow;
+}
+.camping .img1 {
+  background: url("../../Personal/Shop/Assets/Camping/Backpack.jpg") center /cover no-repeat;
+}
+.camping .content {
+  height: 50%;
+  width:  100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.camping .name {
+  padding: 0.2rem;
+  width: 100%;
+}
+.camping .description {
+  height: 100%;
+  width: 100%;
+}
+.camping .purchase {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: 0.6s ease;
+}
+.camping .buy {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.camping .cart {
+    width: 20%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+.camping .buy:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #222;
+  transition: all 0.6s ease;
+}
+.camping .buy:hover h3 {
+  color: #fff;
+  transform: scale(1.2);
+  z-index: 1;
+}
+.camping .buy:hover:after {
+  width: 100%;
+}
+.camping .cart:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #222;
+  transition: all 0.35s ease;
+}
+.camping .cart:hover:after {
+  width: 100%;
+}
+
+
+.footer {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer .donation {
+  height: auto;
+  width: 100%;
+  text-align: center;
+}
+.footer .contact {
+  height: auto;
+  width: 100%;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .donation p {
+  padding: 0.5rem 1rem;
+  border: 0.5px solid #000;
+  border-radius: 0.2rem;
+}
+
+.footer .contact .header {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  padding: 0.5rem 1rem 0 1rem;
+}
+.footer .contact .social {
+  height: 100%;
+  width: auto;
+  display: flex;
+  gap: 0.5rem;
+  background: blue;
+}
+.footer .contact .item {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #fff;
+}
+.footer .contact .gmail {
+  padding: 0 1rem 1rem 1rem;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer .contact input {
+  padding: 0.2rem;
+  height: auto;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.footer .contact textarea {
+  padding: 0.2rem;
+  width: 100%;
+  aspect-ratio: 3/1;
+}
+.footer .submit {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 0.2rem 0.5rem;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+}
+
+@media (min-width: 481px) {
+  .hero .head {
+    max-width: 481px;
+  }
+  .hero .container {
+    max-width: 481px;
+  }
+  .hero input {
+    border-radius: 10rem;
+  }
+  .hero .item {
+    border-radius: 10rem;
+  }
+
+  .wallpaper .container {
+    padding: 0 1rem;
+  }
+  .wallpaper .item {
+    border-radius: 2rem;
+  }
+
+  .emoji .container {
+    flex-direction: row;
+  }
+
+  .camping .container {
+    flex-direction: row;
+    padding: 1rem;
+  }
+  .camping .item {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .emoji .container {
+    flex-direction: column;
+  }
+  .emoji .wrap {
+    flex-direction: row;
+  }
+
+  .camping .container {
+    flex-direction: column;
+  }
+  .camping .wrap {
+    flex-direction: row;
+  }
+
+  .footer {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+}

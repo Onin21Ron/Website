@@ -27,7 +27,7 @@ transition_scale_out.forEach(el => observer.observe(el));
 
 const ACTIVECLASS = "active1";
 const IMAGES = document.querySelectorAll(".template_deck");
-const ACCESSORIES = document.querySelectorAll(".box");
+const ACCESSORIES = document.querySelectorAll(".flip");
 // IMAGES[0].classList.add(ACTIVECLASS);
 
 function removeActiveClass() {
@@ -59,25 +59,28 @@ ACCESSORIES.forEach(flip => {
   flip.addEventListener("click", addClass)
 });
 
-const youtube = document.querySelector(".youtube");;
-youtube.addEventListener("click", () => {
-  window.open("https://youtube.com/@onin_21?si=hSEN00_X_qInS3Gw")
-})
 
-const instagram = document.querySelector(".instagram");;
-instagram.addEventListener("click", () => {
-  window.open("https://www.instagram.com/quagmire_sketch?igsh=MWZteWttZmVkYXZnbw==")
-})
 
-const twitter = document.querySelector(".twitter");;
-twitter.addEventListener("click", () => {
-  window.open("https://x.com/Just_onin21")
-})
 
-const gmail = document.querySelector(".gmail");;
-gmail.addEventListener("click", () => {
-  window.location.href = "mailto:rapraprondolo21@gmail.com?subject=Hello";
-})
+// const youtube = document.querySelector(".youtube");;
+// youtube.addEventListener("click", () => {
+//   window.open("https://youtube.com/@onin_21?si=hSEN00_X_qInS3Gw")
+// })
+
+// const instagram = document.querySelector(".instagram");;
+// instagram.addEventListener("click", () => {
+//   window.open("https://www.instagram.com/quagmire_sketch?igsh=MWZteWttZmVkYXZnbw==")
+// })
+
+// const twitter = document.querySelector(".twitter");;
+// twitter.addEventListener("click", () => {
+//   window.open("https://x.com/Just_onin21")
+// })
+
+// const gmail = document.querySelector(".gmail");;
+// gmail.addEventListener("click", () => {
+//   window.location.href = "mailto:rapraprondolo21@gmail.com?subject=Hello";
+// })
 
 
 
