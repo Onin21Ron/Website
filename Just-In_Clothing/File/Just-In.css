@@ -803,7 +803,7 @@ a {
   position: relative;
 }
 .collect2 .head {
-  background: blue;
+  /* background: blue; */
   position: absolute;
   top: -3rem;
 }
@@ -1056,9 +1056,9 @@ a {
 }
 
 @media (min-width: 281px) {
-  body {
+  /* body {
     background: grey;
-  }
+  } */
 
   .lease .container {
     border: 2px #eee solid;
@@ -1098,9 +1098,9 @@ a {
 }
 
 @media (min-width: 481px) {
-  body {
-      background: blue;
-  }
+  /* body {
+    background: blue;
+  } */
 
   .lease .container {
     border-radius: 1rem;
@@ -1145,9 +1145,9 @@ a {
 }
 
 @media (min-width: 768px) {
-  body {
-      background: green;
-  }
+  /* body {
+    background: green;
+  } */
 
   .lease .container {
     max-width: 100%;
@@ -1168,7 +1168,7 @@ a {
 }
 
 @media (min-width: 1024px) {
-  body {
+  /* body {
     background: red;
-  }
+  } */
 }

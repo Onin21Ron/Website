@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 a, li {
   text-decoration: none;
 }
@@ -12,12 +15,10 @@ li {
     margin: 0;
 }
 /* background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover; */
-
 .spacer {
     width: 100%;
     height: 20vh;
 }
-
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -26,6 +27,10 @@ li {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 1rem;
+}
+
+#About {
+  scroll-margin-top: 5rem;
 }
 
 .nav {
@@ -118,7 +123,6 @@ li {
     width: 150px;
     height: 150px;
     background: url('../Assets/profile.jpg') no-repeat center center/cover;
-    /* background-color: #111; */
     border-radius: 50%;
     margin-bottom: 1rem;
     aspect-ratio: 1/1;
@@ -139,11 +143,14 @@ li {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    padding: 0 clamp(0rem, 6vw + -1rem, 1rem);
+    
 }
 .about img {
     width: 100%;
     aspect-ratio: 1/1;
     background: url('../Assets/about.jpg') no-repeat center center/cover;
+    border-radius: clamp(0rem, 6vw + -1rem, 1rem);
 }
 
 
@@ -164,7 +171,7 @@ li {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 0 clamp(0.2rem, 6vw + -0.5rem, 2rem);
+    padding: 0 clamp(0rem, 6vw + -1rem, 1rem);
 }
 .skill .item {
     padding: 1rem;
@@ -176,8 +183,8 @@ li {
     gap: 0.5rem;
     text-align: center;
     border: 0.2px solid #eee;
-    border-radius: 1rem;
     padding: 1rem;
+    border-radius: clamp(0rem, 6vw + -1rem, 1rem);
 }
 .skill img {
     width: 100%;
@@ -206,13 +213,13 @@ li {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 0 clamp(0.2rem, 6vw + -0.5rem, 2rem);
+    padding: 0 clamp(0rem, 6vw + -1rem, 1rem);
 }
 .main img {
     height: 100%;
     width: 100%;
     aspect-ratio: 1.5/1;
-    background-color: blue;
+    /* background-color: blue; */
     margin-bottom: 0.5rem;
 }
 .main .item {
@@ -225,7 +232,7 @@ li {
     text-align: center;
     padding: 1rem;
     border: 0.2px solid #eee;
-    border-radius: 1rem;
+    border-radius: clamp(0rem, 6vw + -1rem, 1rem);
 }
 
 .other {
@@ -269,7 +276,7 @@ li {
 .other img {
     width: 100%;
     aspect-ratio: 1/1;
-    background-color: red;
+    /* background-color: red; */
     margin-bottom: 0.5rem;
 }
 
@@ -281,34 +288,67 @@ li {
 }
 
 .contact {
-    /* height: 100vh; */
-    width: 100%;
+  height: auto;
+  width: 100%;
 }
 .contact .container {
-    /* height: 100vh; */
-    width: 100%;
-    padding: 2rem;
+  width: 100%;
+  padding: clamp(0rem, 6vw + -1rem, 1rem);
 }
-/* .contact .container:first-child {
-    
-} */
+.contact .container:first-child {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: blue;
+}
+.contact .social {
+  height: auto;
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+.contact .social .wrap {
+  display: flex;
+  gap:  0.5rem;
+}
+.contact .item {
+  height: clamp(2.5rem, 6vw + 2rem, 4rem);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: violet;
+}
+
 .contact .container:last-child {
-    margin: auto;
-    max-width: 30rem;
+  margin: auto;
+  max-width: 30rem;
 }
 
 input, textarea, button {
-    width: 100%;
-    padding: 0.2rem 0.5rem;
-    border-radius: 2px;
-    border: 0.2px black solid;
-    margin-bottom: 0.5rem;
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  border-radius: 2px;
+  margin-bottom: 0.8rem;
+  border: 0.2px black solid;
+  font-size: 1rem;
+}
+input, textarea {
+  border: 0.2px black solid;
+}
+textarea {
+  height: 10rem;
+  letter-spacing: -0.05em;
+}
+button {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 @media (min-width: 481px) {
-    body {
+    /* body {
         background: blue;
-    }
+    } */
 
     .nav .container {
         background: transparent;
@@ -335,12 +375,16 @@ input, textarea, button {
     .skill img {
         aspect-ratio: 1.5/1;
     }
+
+    .contact .social {
+      flex-direction: row;
+    }
 }
 
 @media (min-width: 768px) {
-    body {
+    /* body {
         background: green;
-    }
+    } */
 
     .skill .container {
         gap: 1rem;
@@ -362,25 +406,7 @@ input, textarea, button {
 }
 
 @media (min-width: 1024px) {
-    body {
+    /* body {
     background: red;
-    }
-}
-
-@media (max-width: 281px) {
-    .skill .container {
-        padding: 0;
-    }
-    .skill .item {
-        background-color: red;
-        border-radius: 0;
-    }
-
-    .main .container {
-        padding: 0;
-    }
-    .main .item {
-        background-color: red;
-        border-radius: 0;
-    }
+    } */
 }
