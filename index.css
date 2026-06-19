@@ -122,7 +122,7 @@ li {
 #profile {
     width: 150px;
     height: 150px;
-    background: url('../Assets/profile.jpg') no-repeat center center/cover;
+    background: url('Assets/Hero/profile.jpg') no-repeat center center/cover;
     border-radius: 50%;
     margin-bottom: 1rem;
     aspect-ratio: 1/1;
@@ -144,12 +144,11 @@ li {
     align-items: center;
     gap: 2rem;
     padding: 0 clamp(0rem, 6vw + -1rem, 1rem);
-    
 }
-.about img {
+.about .img {
     width: 100%;
     aspect-ratio: 1/1;
-    background: url('../Assets/about.jpg') no-repeat center center/cover;
+    background: url('Assets/About/about.png') no-repeat center center/cover;
     border-radius: clamp(0rem, 6vw + -1rem, 1rem);
 }
 
@@ -206,33 +205,46 @@ li {
     gap: 2rem;
 }
 .main .container {
-    max-width: 30rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 0 clamp(0rem, 6vw + -1rem, 1rem);
-}
-.main img {
-    height: 100%;
-    width: 100%;
-    aspect-ratio: 1.5/1;
-    /* background-color: blue; */
-    margin-bottom: 0.5rem;
+  max-width: 30rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 clamp(0rem, 6vw + -1rem, 1rem);
 }
 .main .item {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
-    padding: 1rem;
-    border: 0.2px solid #eee;
-    border-radius: clamp(0rem, 6vw + -1rem, 1rem);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 1rem;
+  border: 0.2px solid #eee;
+  border-radius: clamp(0rem, 6vw + -1rem, 1rem);
+}
+.main img {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1.5/1;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+.main .img {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1.5/1;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+.main .item1 {
+  background: lightblue;
+}
+.main .img1 {
+  background: url("Assets/Main/gelo.jpg") no-repeat left center/cover;
 }
 
 .other {
@@ -273,7 +285,7 @@ li {
     border: 0.2px solid #eee;
     border-radius: 1rem;
 }
-.other img {
+.other .img {
     width: 100%;
     aspect-ratio: 1/1;
     /* background-color: red; */
@@ -281,10 +293,60 @@ li {
 }
 
 .artwork {
-    height: 100vh;
-    width: 100%;
-    text-align: center;
-    padding: 0 clamp(0.2rem, 6vw + -0.5rem, 2rem);
+  height: auto;
+  width: 100%;
+  text-align: center;
+  /* padding: 0 clamp(0.2rem, 6vw + -0.5rem, 2rem); */
+}
+.artwork .tag {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.artwork .tag p {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: 0.5px #000 solid;
+  border-radius: 5rem;
+  transition: 2.4s ease;
+}
+.artwork #digital.active, .artwork #sketch.active, .artwork #other.active {
+  background: #eee;
+}
+
+.artwork .container {
+  height: auto;
+  width: 100%;
+}
+.artwork .digital, .artwork .sketch, .artwork .other {
+  display: none;
+  height: auto;
+  width: 100%;
+  column-count: 1;
+  column-gap: 0.2rem;
+  transition: 2.4s ease;
+}
+.artwork .digital.active, .artwork .sketch.active, .artwork .other.active {
+  display: block;
+}
+
+/* If .digital is active, target .sketch and .other that are NOT active */
+/* .artwork .digital.active ~ :not(.active) {
+  opacity: 0.5;
+} */
+
+.artwork img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  break-inside: avoid;
+  transition: 0.6s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+  transition: 0.6s ease;
 }
 
 .contact {
@@ -316,9 +378,27 @@ li {
   height: clamp(2.5rem, 6vw + 2rem, 4rem);
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: violet;
+  cursor: pointer;
+  transition: 0.4s ease;
 }
-
+.contact .item:hover {
+  scale: 1.1;
+}
+.contact .item:not(:hover) {
+  opacity: 0.8;
+}
+.contact .img1 {
+  background: url("Assets/Contact/github.png") no-repeat center center/cover;
+}
+.contact .img2 {
+  background: url("Assets/Contact/linkedin.png") no-repeat center center/cover;
+}
+.contact .img3 {
+  background: url("Assets/Contact/twitter.png") no-repeat center center/cover;
+}
+.contact .img4 {
+  background: url("Assets/Contact/instagram.png") no-repeat center center/cover;
+}
 .contact .container:last-child {
   margin: auto;
   max-width: 30rem;
@@ -344,68 +424,86 @@ button {
   font-weight: 600;
 }
 
+@media (min-width: 281px) {
+  body {
+    /* background: grey; */
+  }
+
+  .artwork .digital, .artwork .sketch {
+    column-count: 2;
+  }
+}
+
 @media (min-width: 481px) {
-    /* body {
-        background: blue;
-    } */
+  /* body {
+    background: blue;
+  } */
 
-    .nav .container {
-        background: transparent;
-        width: auto;
-        position: relative;
-        top: 0;
-        flex-direction: row;
-        padding: 0;
-        gap: 5px;
-        margin-right: 1rem;
-    }
+  .nav .container {
+    background: transparent;
+    width: auto;
+    position: relative;
+    top: 0;
+    flex-direction: row;
+    padding: 0;
+    gap: 5px;
+    margin-right: 1rem;
+  }
 
-    .nav .topbar {
-        display: none;
-    }
+  .nav .topbar {
+      display: none;
+  }
 
-    .about .container {
-        flex-direction: row;
-    }
-    .about img {
-        width: 50%;
-    }
-
-    .skill img {
-        aspect-ratio: 1.5/1;
-    }
-
-    .contact .social {
+  .about .container {
       flex-direction: row;
-    }
+  }
+  .about .img {
+      width: 50%;
+  }
+
+  .skill .img {
+      aspect-ratio: 1.5/1;
+  }
+
+  .artwork .digital, .artwork .sketch {
+    column-count: 3;
+  }
+
+  .contact .social {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 768px) {
-    /* body {
-        background: green;
-    } */
+  /* body {
+    background: green;
+  } */
 
-    .skill .container {
-        gap: 1rem;
-        padding: 1rem;
-        max-width: 100%;
-        flex-direction: row;
-    }
+  .skill .container {
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+    flex-direction: row;
+  }
 
-    .main .container {
-        max-width: 40rem;
-    }
-    .main img {
-        aspect-ratio: 1.8/1;
-    }
+  .main .container {
+    max-width: 40rem;
+  }
+  .main .img {
+    aspect-ratio: 1.8/1;
+  }
 
-    .contact {
-        display: flex;
-    }
+  .artwork .digital, .artwork .sketch {
+    column-count: 4;
+  }
+
+  .contact {
+    display: flex;
+  }
 }
 
 @media (min-width: 1024px) {
-    /* body {
-    background: red;
-    } */
+  /* body {
+  background: red;
+  } */
 }
