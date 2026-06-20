@@ -61,3 +61,24 @@ other.addEventListener('click', function() {
     otherContent.classList.add('active');
   }
 });
+
+const github = document.querySelector(".github");
+const linkedin = document.querySelector(".linkedin");
+const twitter = document.querySelector(".twitter");
+const instagram = document.querySelector(".instagram");
+
+github.addEventListener('click', function() {
+  window.open("https://github.com/Onin21Ron");
+});
+
+linkedin.addEventListener('click', function() {
+  window.open("https://www.linkedin.com/in/raprap-rondolo-402ba940a?utm_source=share_via&utm_content=profile&utm_medium=member_android");
+});
+
+twitter.addEventListener('click', function() {
+  window.open("https://x.com/Ron25236969444");
+});
+
+instagram.addEventListener('click', function() {
+  window.open("https://www.instagram.com/0nin21?igsh=MWs2YmU0M2xiZzUzYw==");
+});

@@ -173,24 +173,34 @@ li {
     padding: 0 clamp(0rem, 6vw + -1rem, 1rem);
 }
 .skill .item {
-    padding: 1rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
-    border: 0.2px solid #eee;
-    padding: 1rem;
-    border-radius: clamp(0rem, 6vw + -1rem, 1rem);
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  border: 0.2px solid #bbb;
+  /* padding: 1rem; */
+  padding: clamp(0.5rem, 6vw + -0.5rem, 1rem) clamp(0rem, 6vw + -1rem, 1rem);
+  border-radius: clamp(0rem, 6vw + -1rem, 1rem);
 }
-.skill img {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1/1;
+.skill .img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1.5/1;
+  border-radius: clamp(0rem, 3vw + -0.5rem, 0.5rem)
 }
-
+.skill .img1 {
+  background: url("Assets/Skill/1.png") no-repeat center center/cover;
+}
+.skill .img2 {
+  background: url("Assets/Skill/2.jpg") no-repeat center center/cover;
+}
+.skill .img3 {
+  background: url("Assets/Skill/3.png") no-repeat center center/cover;
+}
 .project {
     height: 100%;
     width: 100%;
@@ -222,16 +232,9 @@ li {
   align-items: center;
   gap: 0.5rem;
   text-align: center;
-  padding: 1rem;
-  border: 0.2px solid #eee;
+  padding: clamp(0.5rem, 6vw + -0.5rem, 1rem) clamp(0rem, 6vw + -1rem, 1rem);
+  border: 0.2px solid #bbb;
   border-radius: clamp(0rem, 6vw + -1rem, 1rem);
-}
-.main img {
-  height: 100%;
-  width: 100%;
-  aspect-ratio: 1.5/1;
-  margin-bottom: 0.5rem;
-  border-radius: 0.5rem;
 }
 .main .img {
   height: 100%;
@@ -240,11 +243,23 @@ li {
   margin-bottom: 0.5rem;
   border-radius: 0.5rem;
 }
-.main .item1 {
+/* .main .item1 {
   background: lightblue;
-}
+} */
 .main .img1 {
   background: url("Assets/Main/gelo.jpg") no-repeat left center/cover;
+}
+/* .main .item2 {
+  background: grey;
+} */
+.main .img2 {
+  background: url("Assets/Main/hotel.jpg") no-repeat center center/cover;
+}
+/* .main .item3 {
+  background: lightgreen;
+} */
+.main .img3 {
+  background: url("Assets/Main/justin.jpg") no-repeat center center/cover;
 }
 
 .other {
@@ -281,35 +296,44 @@ li {
     height: auto;
     width: 100%;
     /* background: violet; */
-    padding: 1rem;
-    border: 0.2px solid #eee;
-    border-radius: 1rem;
+    padding: clamp(0.5rem, 6vw + -0.5rem, 1rem) clamp(0rem, 6vw + -1rem, 1rem);
+    border: 0.2px solid #ddd;
+    border-radius: clamp(0.5rem, 8vw + -1.5rem, 1.5rem);
 }
 .other .img {
     width: 100%;
-    aspect-ratio: 1/1;
-    /* background-color: red; */
+    aspect-ratio: 1.5/1;
+    background-color: #eee;
     margin-bottom: 0.5rem;
+    border-radius: clamp(0rem, 6vw + -1rem, 1rem);
 }
 
 .artwork {
   height: auto;
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   /* padding: 0 clamp(0.2rem, 6vw + -0.5rem, 2rem); */
+}
+.artwork .description {
+  padding: 0 clamp(0rem, 6vw + -1rem, 1.5rem);
 }
 .artwork .tag {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: clamp(0rem, 6vw + -1rem, 1rem);
+  padding: 0 clamp(0rem, 8vw + -1rem, 2rem);
 }
 .artwork .tag p {
   width: 100%;
   padding: 0.5rem 0;
-  border: 0.5px #000 solid;
+  border: 0.5px #aaa solid;
   border-radius: 5rem;
-  transition: 2.4s ease;
+  transition: 0.6s ease;
+  cursor: pointer;
 }
 .artwork #digital.active, .artwork #sketch.active, .artwork #other.active {
   background: #eee;
@@ -387,16 +411,16 @@ li {
 .contact .item:not(:hover) {
   opacity: 0.8;
 }
-.contact .img1 {
+.contact .github {
   background: url("Assets/Contact/github.png") no-repeat center center/cover;
 }
-.contact .img2 {
+.contact .linkedin {
   background: url("Assets/Contact/linkedin.png") no-repeat center center/cover;
 }
-.contact .img3 {
+.contact .twitter {
   background: url("Assets/Contact/twitter.png") no-repeat center center/cover;
 }
-.contact .img4 {
+.contact .instagram {
   background: url("Assets/Contact/instagram.png") no-repeat center center/cover;
 }
 .contact .container:last-child {
